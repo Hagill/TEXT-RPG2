@@ -65,6 +65,7 @@ namespace Project4
             }
         }
 
+        
         private void ClearAllMonsters()   // 전투 종료 시 생성 된 몬스터들을 리스트에서 삭제
         {
             Monsters.Clear();

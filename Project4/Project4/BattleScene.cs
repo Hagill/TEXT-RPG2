@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -40,7 +41,9 @@ namespace Project4
                     }
                     else
                     {
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
                         Console.WriteLine($"Lv.{monster.Level,2} {monster.Name} Dead");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                     }
                 }
                 Console.WriteLine("\n");
@@ -90,7 +93,9 @@ namespace Project4
                     }
                     else
                     {
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
                         Console.WriteLine($"{index} Lv.{monster.Level,2} {monster.Name} Dead");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                     }
                     index++;
                 }
