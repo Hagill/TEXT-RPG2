@@ -28,7 +28,6 @@ namespace Project4
                 return BaseAttackPoint + (Level * 1) + SumEquipWeaponAp;
             }
         }
-
         public int CurrentDefencePoint
         {
             get
