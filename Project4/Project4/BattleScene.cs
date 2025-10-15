@@ -57,6 +57,7 @@ namespace Project4
                     case 1:
                         Console.WriteLine("공격을 선택하셨습니다.");
                         Console.ReadKey();
+                        DisplayAttackScene();
                         break;
                     case 0:
                         Console.WriteLine("도망치기를 선택하셨습니다.");
@@ -101,7 +102,7 @@ namespace Project4
 
                 int playerSelect = InputHandler.GetUserActionInputInBattle();
 
-                if (playerSelect <= battleManager.Monsters.Count)
+                if (playerSelect <= battleManager.Monsters.Count && playerSelect > 0)
                 {
                     int monsterIndex = playerSelect - 1;
                     if (!battleManager.Monsters[monsterIndex].IsLive)
@@ -111,23 +112,20 @@ namespace Project4
                     }
                     else
                     {
+
                         battleManager.DamagedToMonster(battleManager.Monsters[monsterIndex], player.CurrentAttackPoint);
                     }
                 }
-                switch (playerSelect)
+                else if (playerSelect == 0)
                 {
-                    case 1:
-                        Console.WriteLine("공격을 선택하셨습니다.");
-                        Console.ReadKey();
-                        break;
-                    case 0:
-                        Console.WriteLine("취소를 선택하셨습니다.");
-                        Console.ReadKey();
-                        return;
-                    default:
-                        Console.WriteLine("잘못된 입력입니다.");
-                        Console.ReadKey();
-                        break;
+                    Console.WriteLine("취소를 선택하셨습니다.");
+                    Console.ReadKey();
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("잘못된 입력입니다.");
+                    Console.ReadKey();
                 }
             }
         }

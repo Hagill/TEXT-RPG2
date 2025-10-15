@@ -40,6 +40,19 @@ namespace Project4
             }
         }
 
+        public float CalcPlayerAttackDamage(Player player)
+        {
+            float playerAttack = player.CurrentAttackPoint;
+            float minDamage = playerAttack * 0.9f;
+            float maxDamage = playerAttack * 1.1f;
+
+            float calcDamage = (float)(rand.NextDouble() * (maxDamage - minDamage) + minDamage);
+
+            calcDamage = (float)Math.Round(calcDamage);
+
+            return calcDamage;
+        }
+
         public void DamagedToMonster(Monster monster, float damage)
         {
             monster.CurrentHp(damage);
