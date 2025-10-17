@@ -22,7 +22,7 @@ namespace Project4
 
             for (int i = 0; i < spawnMonster; i++)
             {
-                int spawnMonsterType = rand.Next(1, 4);
+                int spawnMonsterType = rand.Next(1, Monsters.Count + 1);
                 switch (spawnMonsterType)
                 {
                     case 1:
